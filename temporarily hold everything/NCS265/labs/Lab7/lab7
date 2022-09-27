@@ -1,0 +1,102 @@
+Henry Jacobs
+CS265 -- Drexel University 
+Kurt Schmidt
+Lab 7 -- November 8, 2020
+
+
+
+1.1 
+
+// Takes an array of doubles, along with the array's length and returns arithmetic mean // 
+
+double arrAvg( double a[], size_t b )  
+{
+	double average ; 
+
+	for( size_t i = 0; i<b ; i++ ) 
+		average += a[i] ;
+
+	return average/b ; 
+}
+
+
+
+1.2 
+
+//Parses up non-negative number (base 10), writes the string into an array pointed to by answer 
+
+void int2string( int n, char answer[] ) 
+{
+	int i = 0, append, cnt = 0 ;
+	char temparray[n] ; 
+
+	while (n != 0) {
+		char c ; 
+		append = n % 10 ;
+		n /= 10 ; 
+		c = (char) append + '0' ; 
+		temparray[i] = c ; 
+		i++ ; 
+	}
+
+	for ( i ; i >= 0 ; i-- ) 
+	{
+		*answer[cnt] = temparray[i] ;
+		cnt++ ; 
+	} 
+}
+
+
+2.1
+
+//Takes an array of integers, along with the number of elements in array (n), and an integer that is searched for in array. If found, it returns the index of the target element, if not, it returns number of elements in array. 
+
+
+
+2.2
+
+//Takes an array of doubles and calculates the max, min, and mean. 
+void arrStats( double array[], size_t len, double *max, double *min, double *mean) 
+{
+	int i ; 
+	double *k = array ;
+
+
+	*max = *min = *(k + 0) ;
+	for (i = 1; i < len; i++)
+	{
+		if ( *(k + i) > *max) 
+			*max = *(k + i) ;
+		else if ( *(k + i)  < *min) 
+			*min = *(k + i) ; 
+	}
+	
+	for ( size_t i = 0 ; i < len ; i++ ) 
+		*mean += *(k + i) ; 
+
+	*mean /= len ; 
+ 
+}
+
+2.3
+
+//Takes an array of integers and seaarches for a target integer within that array. First one found is returned as a pointer. If none are found, function returns NULL. 
+int arrFind (int array[], size_t len, int target)
+{
+	int *pointer, *k = array ;
+
+	for (size_t i = 0 ; i < len ; i++ ) 
+		if ( *(k + i) == target)
+		{
+			pointer = &*(k + i) ;
+			return *pointer ; 
+		} 
+
+
+	*pointer = NULL ; 
+	return (*pointer) ;
+} 
+
+
+3.1
+

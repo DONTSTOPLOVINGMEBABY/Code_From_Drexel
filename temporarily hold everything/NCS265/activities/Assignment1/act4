@@ -1,0 +1,15 @@
+Henry Jacobs
+
+Activity 4
+
+
+1. To protect from the shell so the entire command can be passed to awk. This means you cannot single quotes within the command passed to awk. 
+
+
+2. sed '/\<the\>/ d' s1
+
+
+3. Doesn't need quotes because there are no special characters, and sed automatically recognizes s/ as a parameter for the command. 
+
+
+4. sed '/<head>/,/<\/head>/ { s/Kurt/Vera/g}' s1

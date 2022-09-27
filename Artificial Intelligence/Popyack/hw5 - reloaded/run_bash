@@ -1,0 +1,7 @@
+#! usr/bin/bash
+
+printf "\n\n" >> time_signatures.txt
+
+(time python3 Pentago_master.py -c config_1653963351.6517332.txt -b www.................................) 2>&1 | cat >> time_signatures.txt
+
+echo "Done!"

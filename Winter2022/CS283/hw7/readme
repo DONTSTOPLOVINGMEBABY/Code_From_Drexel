@@ -1,0 +1,6 @@
+You can compile the program using the following command: 
+    gcc hw7.c -lpthread -w 
+
+If you do not use the -w option, you will get warnings from the program casting pointers to variables of different types. 
+
+

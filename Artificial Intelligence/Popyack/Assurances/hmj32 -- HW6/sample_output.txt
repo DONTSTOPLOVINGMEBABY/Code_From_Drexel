@@ -1,0 +1,164 @@
+STATE CONFIGURATION = wbwb................................
+
+-------------------
+Welcome to Pentago!
+-------------------
+Reading setup from config_1653963351.6517332.txt:
+
+Player hank: type=computer, plays White tokens
+Player hankus: type=computer, plays Black tokens
+
++-------+-------+
+| w b w | b . . |
+| . . . | . . . |
+| . . . | . . . |
++-------+-------+
+| . . . | . . . |
+| . . . | . . . |
+| . . . | . . . |
++-------+-------+
+
+hank's move: 1/4 1L
+Placing w in cell [1][0], and rotating Block 1 Left
++-------+-------+
+| w . . | b . . |
+| b . . | . . . |
+| w w . | . . . |
++-------+-------+
+| . . . | . . . |
+| . . . | . . . |
+| . . . | . . . |
++-------+-------+
+
+2
+hankus's move: 1/2 1L
+Placing b in cell [0][1], and rotating Block 1 Left
++-------+-------+
+| . . . | b . . |
+| b . w | . . . |
+| w b w | . . . |
++-------+-------+
+| . . . | . . . |
+| . . . | . . . |
+| . . . | . . . |
++-------+-------+
+
+0
+hank's move: 1/5 2R
+Placing w in cell [1][1], and rotating Block 2 Right
++-------+-------+
+| . . . | . . b |
+| b w w | . . . |
+| w b w | . . . |
++-------+-------+
+| . . . | . . . |
+| . . . | . . . |
+| . . . | . . . |
++-------+-------+
+
+4
+hankus's move: 1/1 1L
+Placing b in cell [0][0], and rotating Block 1 Left
++-------+-------+
+| . w w | . . b |
+| . w b | . . . |
+| b b w | . . . |
++-------+-------+
+| . . . | . . . |
+| . . . | . . . |
+| . . . | . . . |
++-------+-------+
+
+-4
+hank's move: 1/4 1R
+Placing w in cell [1][0], and rotating Block 1 Right
++-------+-------+
+| b w . | . . b |
+| b w w | . . . |
+| w b w | . . . |
++-------+-------+
+| . . . | . . . |
+| . . . | . . . |
+| . . . | . . . |
++-------+-------+
+
+6
+hankus's move: 1/3 1L
+Placing b in cell [0][2], and rotating Block 1 Left
++-------+-------+
+| b w w | . . b |
+| w w b | . . . |
+| b b w | . . . |
++-------+-------+
+| . . . | . . . |
+| . . . | . . . |
+| . . . | . . . |
++-------+-------+
+
+-6
+hank's move: 2/1 1L
+Placing w in cell [0][3], and rotating Block 1 Left
++-------+-------+
+| w b w | w . b |
+| w w b | . . . |
+| b w b | . . . |
++-------+-------+
+| . . . | . . . |
+| . . . | . . . |
+| . . . | . . . |
++-------+-------+
+
+8
+hankus's move: 2/2 1L
+Placing b in cell [0][4], and rotating Block 1 Left
++-------+-------+
+| w b b | w b b |
+| b w w | . . . |
+| w w b | . . . |
++-------+-------+
+| . . . | . . . |
+| . . . | . . . |
+| . . . | . . . |
++-------+-------+
+
+-5
+hank's move: 2/4 1L
+Placing w in cell [1][3], and rotating Block 1 Left
++-------+-------+
+| b w b | w b b |
+| b w w | w . . |
+| w b w | . . . |
++-------+-------+
+| . . . | . . . |
+| . . . | . . . |
+| . . . | . . . |
++-------+-------+
+
+9
+hankus's move: 2/5 1L
+Placing b in cell [1][4], and rotating Block 1 Left
++-------+-------+
+| b w w | w b b |
+| w w b | w b . |
+| b b w | . . . |
++-------+-------+
+| . . . | . . . |
+| . . . | . . . |
+| . . . | . . . |
++-------+-------+
+
+-5
+hank's move: 2/7 2R
+Placing w in cell [2][3], and rotating Block 2 Right
++-------+-------+
+| b w w | w w w |
+| w w b | . b b |
+| b b w | . . b |
++-------+-------+
+| . . . | . . . |
+| . . . | . . . |
+| . . . | . . . |
++-------+-------+
+
+9999
+hank (White) wins

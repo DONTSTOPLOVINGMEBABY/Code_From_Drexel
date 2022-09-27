@@ -1,0 +1,55 @@
+Henry Jacobs
+
+Lab 1
+
+Kurt Schmidt
+
+2. Line Two
+
+3. Line Three
+
+4.
+
+-rw-r--r--+ 1 kschmidt kschmidt  8060 Apr  9  2018 funny
+-rwxr-xr-x+ 1 kschmidt kschmidt   240 Apr  9  2018 hello.bash
+
+**Granted I'm still in Professor Schmidt's Directory, but if I was in my own directory kschmidt would read hmj32. I also only listed the info for funny and hello.bash, but when the command is executed, every other file in the directory is listed with similar information. 
+
+5. I gave myself read and write, I gave my group read permissions, and I gave the world read permissions.
+
+6. I gave myself read, write, and execute permissions, I gave my group read and execute permissions, and I gave the world read and execute permissions.
+
+7. Yes
+
+8. Yes
+
+9. No
+
+10. chmod 700 hello.bash and chmod 755 hello.bash
+
+11. Cannot write because the file is read only. 
+
+12. ls * - annoy annoy.cc itemList itemList-2cols TelecomTruths UnitTestingPhase
+
+lab1:
+lab1
+
+ls a* - annoy annoy.cc
+
+ls m* - itemList itemList-2cols TelecomTruths
+
+ls anno? - annoy
+
+ls annoy? - ls: cannot access 'annoy?': No such file or directory
+
+13. Message, "2 files to edit" with the files being "a" and "space". 
+
+14. -h : "human readable", which prints sizes like 1K 234M 2G etc. 
+
+-l : use a long listing format
+
+-t : sort by modification time, newest first
+
+-A : "Almost all", does not list implied . and ..
+
+-d : lists directories themselves, not their contents 

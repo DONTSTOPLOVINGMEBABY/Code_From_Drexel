@@ -1,0 +1,105 @@
+#!/bin/bash
+
+
+function setdb
+{
+	arg1=$1
+	arg2=$2
+
+	if [ -f "$1" ] && [ -r "$1" ] && [ -z "$arg2" ]  
+	then 
+		echo "Database set to <"$1">"
+	elif [ -f "$1" ] && ! [ -r "$1" ] && [ -z "$arg2" ] 
+	then
+		echo "File <"$1"> not readable."
+		return 1
+	elif ! [ -f "$1" ] && ! [ -z "$arg1" ]
+	then 
+		echo "File <"$1"> created. Database set to <"$1">"
+		> "$1"
+	elif [ -z "$arg1" ]
+	then 
+		echo "Missing argument"
+		return 1
+	elif ! [ -z "$arg2" ]
+	then 
+		echo "Too many arguments"
+		> "$1"
+	fi
+}
+
+function add 
+{
+	true
+}
+
+
+
+
+
+
+
+
+
+
+
+
+while true;
+do
+
+	echo -n "% "
+	read inputs
+	set -- $inputs
+	main_vars=$1
+	args2=$2
+	args3=$3
+	if [ $main_vars == "setdb" ]
+	then
+		x=$(setdb $args2 $args3)
+		if [ x != 1 ]
+		then 
+			break
+		fi
+	elif [ $main_vars == "add" ]
+	then
+		echo "Database has not been set."
+	elif [ $main_vars == "delete" ]
+	then
+		echo "Database has not been set."
+	elif [ $main_vars == "printdb" ]
+	then
+		echo "Database has not been set."
+	elif [ $main_vars == "printdb" ] 
+	then 
+		echo "Database has not been set."
+	else
+		echo "Unrecognised Command"
+	fi
+	
+
+done
+
+
+while true;
+do
+
+
+	echo $main_vars
+
+	echo -n "% "
+	read input
+	set -- $input
+	main_var=$1
+	arg2=$2
+	arg3=$3
+
+	if [ $main_var == "quit" ]
+	then
+		break
+	
+	elif [ $main_var == "setdb" ]
+	then
+		echo "Database already set."
+	fi
+
+done

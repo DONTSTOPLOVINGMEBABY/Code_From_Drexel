@@ -1,0 +1,13 @@
+Christian Pedro
+CS283
+Homework 7
+Description File
+3/13
+
+	I thought that this was a really interesting homework. It helped solidify my knowledge of threads and how to handle them. I thought this was an interesting 
+	assignment because I like the idea of threads and running concurrent processes. It seems like something that will be very usefull later and I am glad I am 
+	learning it now. For this assignment we had to fix the code that was given to use threads. This was somewhat challenging. For me the challenge was trying to
+	figure out how I was going to solve the problem. I got the big things out of the way like creating the thread and join the threads. That was easy but the dotprod
+	was a new one for me since I have not taken Calc2 or 3. So this was a new concept for me. I would recommend this assignment to future students. I think it 
+	holds so important lessons and is just the right difficulty. I think that the assignment was successful in teaching me about signals and concurrent processes. 
+	Overall I really enjoyed this assignment.

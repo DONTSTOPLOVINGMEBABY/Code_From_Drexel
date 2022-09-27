@@ -1,0 +1,94 @@
+Lab 7 Answer Sheet ; Henry Jacobs
+
+
+
+1. 
+
+i. A list is a sequence of elements that is not immediately indexable. In order to access an element on the list, you have to traverse across every element that comes before it. For example, in order to to reach the tenth element of the list, starting from the beginning of the list, you would have to traverse across the first element, to the second, to the third, and so on and so forth until you reach the tenth element. Elements in a list can be linked to one another using a pointer. When traversing a list with elements that are linked with a pointer, the user traverses in the direction of the pointer, until the specific element is reached. A linked list can be useful if you have data that you are trying to store sequentially that are linked in some particular way, but you also sacrifice efficiency when it comes time to searching or operating on the list, in particular removing or adding, because the list may have to be reordered in order to ensure that the links still make sense. You access a list in linear time and can modify the middle in constant time. 
+
+
+ii. A stack is a LIFO data structure, that is that the last piece of data to be stored in the structure (the most recent) is the first to be called when the user operates on the stack. A stack allows the user to efficiently add and remove data from the top of the list. It is only possible to modify or access the elements at the bottom of the stack by removing the elements from the top down, until you reach lowest element. Stacks can be useful to quickly access recent data, but can become costly as they can become overflowed with data and cumbersome. In this sense, the stack is still a linear data structure, but the data can only be accessed in one direction.  
+
+iii. A queue data structure is almost the opposite of a stack in the sense that it's a FIFO data structure. New pieces of data that is added to queue is placed at the back of the data structure, and the data structure that was placed first will be the first to be accessed when it is time. Essentially, we would want our queue to be good at adding things to the end and removing them from the front. 
+
+iv. A dictionary is a container used to describe associative relationships. In this structure, a key is mapped to a value. The user is able to access the dictionary only through the key, which then returns the value associated with that key. You can think of a dictionary as a pair, it's coupled with something else. Each key can only appear once in the dictionary. The dictionary is not indexed and doesn't have subscripts. 
+
+
+2. The most amount of times a binary search will have to compare elements for a list with n elements would be O(n). This means that the user would still have to search every element of the list, before the element is found or None is returned. The BST would look like all the data is stacked to one side. 
+
+
+3. Given an array with n items, the linear search will compare at most n times. Since linear search moves in one direction, and has to compare every element before n until n is found, the highest amount of possible comparisons is n, given that the element is at the end of the array or is not in the list at all.
+
+
+4. If the element you are searching for lies at the beginning of the list, it would be faster in some situations to perform a linear search because the data doesn't have to be sorted, and in some cases for a binary search tree, the data that may be in the beginning of a normal list, lies at the end of a binary search tree. For instance, let's say that you have 20 elements in a list that are all consecutive integers from 1-20. Let's say that the root of the BST is 10. If the integer you are searching for is 2, it will be the second comparison in a linear search, while it would be the the tenth comparison in a BST, not to mention it would also have to sort all of the integers before performing the search. This is a bit of an extreme example, but basically for a BST, the elements on the ends of an array will be the last ones to be searched. 
+
+
+5. 
+
+Tried using code, but swap function didn't work for me. Did it by hand. 
+
+
+*84* 37 93 82 98 27 63 73 93 27 75 55 45 8
+
+
+
+										84
+
+	37 82 27 63 73 27								93 98 93 
+	75 55 45 8							
+
+												
+
+	8 45 55 75 27 73 								93 93 98
+	63 27 82 37
+
+	
+
+
+			37
+
+8 27 27 37				45 55 63 75 73 82
+
+
+							45 55 63 73	75	82
+			
+
+
+
+
+8 27 37 45 55 63 73 75 82 84 93 93 98 
+
+
+
+
+6. It would output 06243
+
+
+7. It would output [13, [28, [24, [3, None]]]]
+
+
+8. The line s = (char*) malloc( 100 ) points so to a new array, away from buffer. This frees buffer from the pointer s, and it's then returned to its original state. 
+
+
+9. keyList = [["Jaga"], ["Jesse"], ["Cos"], ["Kate"], ["Nash"], ["Vera"], ["Bob"]]
+	valList = [[24], [78], [86], [28], [11], [99], [38]]
+
+
+10. 
+
+
+int find( char *key, int *p_ans )
+{
+   sNode* sym;
+   int h = hash(name) ;
+
+   for( sym=symtab[h] ; sym != NULL; sym=sym->next)
+      if( strcmp( name, sym->name ) == 0 )
+         return(1, sym) ;
+      else
+         return(0) ;
+
+}
+
+
+

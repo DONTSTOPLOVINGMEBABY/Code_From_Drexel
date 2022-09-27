@@ -1,0 +1,575 @@
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+	<meta http-equiv="Content-Language" content="en-us">
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+	<meta http-equiv="Expires" content="no-expire">
+	<meta name="Author" content="Vera Zaychik & Kurt Schmidt">
+	<meta name="Publisher" content="Drexel University">
+	<meta name="Copyright" content="">
+	<meta name="Keywords" content="Programming Techniques Unix">
+	<meta name="Description"
+		content="Lab for CS265 - Adv. Programming Techniques">
+	<meta name="Pagetype" content="Lab">
+	<meta name="Audience" content="All">
+	<link rel='shortcut icon' type='image/gif'
+		href='../../images/drexel.gif'></link>
+	<script language="JavaScript" src="../courseInfo.js"></script>
+	<script language="JavaScript" src="../../Scripts/courseFormat.js"></script>
+	<title>Lab - Set up, Vim, Unix Intro</title>
+	<link href="labs.css" rel="stylesheet" type="text/css">
+</head>
+
+<body text="#330099" link="#000066" vlink="#000066" alink="#FF0000"
+	background="../../../images/blueTexture.jpeg">
+
+<ul><ol>
+
+<h1> Lab &ndash; Unix </h1>
+
+<h3> Instructions </h3>
+
+<p> Questions will be denoted w/a <span class='question'>Q#</span>.  You will answer each question in a text file
+called <span class='fn'>lab1</span> .  </p>
+
+<p> The directory for this lab is <span class='fn'>tux:~kschmidt/public_html/CS265/Labs/Unix</span> .
+
+<!-- or, via the Web: -->
+<tt><b>
+<script><!--
+	//printPath( 'Labs/Unix' )
+	//--></script>
+</b></tt>
+
+
+	<h2> Logging in, set up </h2>
+
+	<li> If you do <b>not</b> yet have an account on the CS department machines, visit the CCI helpdesk, or email <a
+		href='mailto:ihelp@drexel.edu'>ihelp@drexel.edu</a> </li>
+
+	<li> As an example of logging in, creating (and locking) a directory, creating C++ source, compiling, running, and
+		removing the binary, follow the instructions in <a target='_blank'
+		href='http://www.cs.drexel.edu/~kschmidt/Ref/csLogin.html'> 
+		http://www.cs.drexel.edu/~kschmidt/Ref/csLogin.html</a> .  Use <tt><b>CS265</b></tt> as the course . </li>
+
+	<li>Familiarize yourself with the commands on my <a target="cs265" href=
+		"http://www.cs.drexel.edu/~kschmidt/Ref/unix_reference.html"> basic Unix reference page</a>
+	</li>
+
+	<li> You will connect to, and do all of your work on, <tt>tux.cs.drexel.edu</tt>.  Tux is actually a farm of about 5
+		servers.  You may either sit directly at one of our department machines, or use SSH to connect remotely </li>
+
+	<li> If you've not created a directory for this course, type:
+		<div class='cli'>
+			$ mkdir CS265
+		</div>
+	</li>
+
+	<li> Lock it down, so others can't see it (explanation follows):
+		<div class='cli'>
+			$ chmod 700 CS265
+		</div>
+		<p> Your housekeeping is up to you.  I recommend a subdirectory for each lab/assignment you're working on.  However
+			it happens, <b>all files should be underneath (subdirectories) of this course directory</b>, so others can't get to
+			your work. </p>
+	</li>
+
+	<h2> Practise <span class='cmd'>submit</span> </h2>
+
+	<li> Take a spin through <a target='_blank' href='submit.html'>submit.html</a> </li>
+
+	<h2> Startup Files </h2>
+
+	<!--
+	<li>Use <tt>man</tt> or <tt>info</tt> to read about bash, specifically,
+	parsing the start-up files <tt><b>.bashrc</b></tt> and
+	<tt><b>.bash_profile</b></tt>.
+
+	<p><font color='#990066'><b>Q1</b>: Describe when the shell invokes
+	<tt>.bashrc</tt>, and when it invokes <tt>.bash_profile</tt>.</font></p>
+
+	<li>
+		<p> List out the contents of your <emph>home</emph> directory.  If you're new, copy <tt>.bashrc</tt> that I've made
+		for you, I think it's a decent place to start.  It is located in <tt>~kschmidt/Public</tt>.  You should also take the
+			<tt>.vimrc</tt> that's there.  Before you do, make back-ups of your existing startup files (if any). </p>
+
+		<p><b>Note:</b>  As a sanity check, when changing your startup files, the best way to test is simply to invoke another
+		instance of the shell (a subshell), by typing <tt>bash</tt>.  If things are seriously wrong you can exit out of there,
+		back to a shell that's in okay shape, and fix up the problem.</p> 
+	</li>
+	-->
+
+	<li> Go to your home directory:
+		<div class='cli'>
+			$ pushd ~/
+		</div>
+	</li>
+
+	<li> For each of these files, <i>f</i>: </li>
+	<ul>
+		<li> <span class='fn'>.bashrc</span> </li>
+		<li> <span class='fn'>.inputrc</span> </li>
+		<li> <span class='fn'>.exrc</span> </li>
+		<li> <span class='fn'>.mailrc</span> </li>
+		<li> <span class='fn'>.tmux.conf</span> </li>
+		<li> <span class='fn'>.vimrc</span> </li>
+		<li> <span class='fn'>.emacs</span> </li>
+	</ul>
+	do this:
+	<div class='cli'>
+		$ if [ -e <i>f</i> ] ; then mv <i>f</i> <i>f</i>.ORIG ; fi <br/>
+		$ cp ~kschmidt/Public/<i>f</i> .
+	</div>
+
+	<p> <b>Note</b>, putting the <span class='fn'>.ssh/config</span> file in your home directory on TUX won't serve too
+		much (unless you ssh from TUX to elsewhere), though it won't hurt.  You are welcome to put this file on your Mac or
+		Linux machine, or in <tt>c:\User\<i>username</i></tt> on Windows, if you're using OpenSSH from the PowerShell or cmd
+		window.  Remember to edit the file, put your own ID in there.  </p>
+
+	<li> If you use VIM in a terminal with a dark background: </li>
+	<ol type='i'>
+		<li> Edit <span class='fn'>~/.vimrc</span>.  From your home directory, type:
+			<div class='cli'>
+				$ nano .vimrc
+			</div>
+		</li>
+		<li> Use ^W (ctrl-W) to search for the line
+			<div class='file'>
+				"set background=dark
+			</div>
+		</li>
+		<li> Uncomment the line </li>
+		<li> Use ^O (ctrl-O) to save the file </li>
+		<li> Use ^X (ctrl-X) to exit </li>
+	</ol>
+					
+	<li> If you use Emacs in a terminal with a dark background: </li>
+	<ol type='i'>
+		<li> Edit <span class='fn'>~/.emacs</span>.  From your home directory, type:
+			<div class='cli'>
+				$ nano .emacs
+			</div>
+		</li>
+		<li> Use ^W (ctrl-W) to search for the line
+			<div class='file'>
+				; (load-theme 'manoj-dark)
+			</div>
+		</li>
+		<li> Uncomment the line (remove the semicolon) </li>
+		<li> Use ^O (ctrl-O) to save the file </li>
+		<li> Use ^X (ctrl-X) to exit </li>
+	</ol>
+					
+	<li> Now, use <span class='cmd'>popd</span> to return to your previous directory, forgetting this one:
+		<div class='cli'> $ popd </div>
+	</li>
+
+
+	<h2> Editors </h2>
+
+	<li> Go to your class directory, under your home directory </li>
+
+	<li> Make an appropriate subdirectory for this lab, if you've not yet done so </li>
+
+	<p> You may use either emacs or vi (vim).  Both are powerful editors, understand many languages, provide syntax
+		highlighting, etc.  I am a vim guy, for not a terribly good reason, but, I'll be better able to answer VIM
+		questions.
+		
+	<p> Go through <em>one</em> of the following tutorials, and submit the appropriate file: </p>
+
+	<h4> VIM (VI Improved) </h4>
+	<p> From your lab directory: </p>
+	<ul>
+		<li> Type <div class='cli'>$ vimtutor</div> at the prompt. </li>
+		<li> Save it as <span class='fn'>vi_lab</span> .  Hit <span class='cmd'>:w vi_lab</span> </li>
+		<li> You can now make edits, and save them.  Pick up again, simply by invoking
+			<span class='cmd'>vi</span> on this file:
+			<div class='cli'>$ vi vi_lab</div>
+		</li>
+	</ul>
+
+	<h4> Emacs </h4>
+	<p> From your lab directory: </p>
+	<ul>
+		<li> Start <span class='cmd'>emacs</span>:
+			<div class='cli'>$ emacs</div>
+		</li>
+		<li> Invoke the tutorial:  <span class='cmd'>ctrl-h t</span>  </li>
+		<li> Save it as <span class='fn'>emacs_lab</span> .  Type <span class='cmd'>meta-x save-buffer</span> , (hold ALT
+			for the meta key), then follow the prompts </li>
+		<li> You can now make edits, and save them.  Pick up again, simply by invoking
+			<span class='cmd'>emacs</span> on this file:
+			<div class='cli'>$ emacs emacs_lab</div>
+		</li>
+	</ul>
+
+	<script><!--
+		q = "Complete all edits in this file, as directed by the file, and submit along w/your lab."
+		question( q )
+		//--></script>
+	
+	<h3> Editing the Command Line </h3>
+
+	<li> Make sure that the new <span class='fn'>.bashrc</span> is in your home directory:
+		<div class='cli'>
+			$ grep -- '-o\s*vi' ~/.bashrc
+		</div>
+		If not, go back to the Startup Files section again.
+	</li>
+	<ul>
+		<li> The <span class='cmd'>--</span> is POSIX for "no more options" </li>
+		<li> We'll talk about regular expressions in a few weeks </li>
+		<li> <span class='fn'>~/</span> always refers to your home directory </li>
+	</ul>
+
+	<li> Either log out and log back in, or type
+		<div class='cli'>
+			$ . ~/.bashrc
+		</div>
+		If not, go back to the Startup Files section again.
+	</li>
+
+	<li> Type the following commands, watch the output:
+		<div class='cli'>
+<pre>$ echo Line One
+Line One
+$ echo Line To
+Line To
+$ echo line Three
+line Three</pre>
+		</div>
+	</li>
+
+	<p> You can edit your command history much as you would a text file.  Here we are using <span class='cmd'>vim</span>
+	bindings. </p>
+
+	<p> I would really encourage you to get away from the arrow keys.  You can be faster. </p>
+
+	<li> Hit these keys: <span class='key'>Esc</span> <span class='key'>k</span> <span class='key'>k</span> <span
+		class='key'>W</span> <span class='key'>W</span> <span class='key'>a</span> <span class='key'>w</span> <span
+		class='key'>Enter</span> </li>
+
+	<script><!--
+		question( "What was the result?" )
+	//--></script>
+
+	<li> Hit these keys: <span class='key'>Esc</span> <span class='key'>k</span> <span class='key'>k</span> <span
+		class='key'>W</span> <span class='key'>~</span> <span class='key'>Enter</span> </li>
+
+	<script><!--
+		question( "What was the result?" )
+	//--></script>
+
+	<p> (Of course, if you're using emacs, then go back, comment out the following line in your <span
+	class='fn'>.bashrc</span> file: 
+
+	<div class='file'>set -o vi</div>
+
+	<h2> Permissions &ndash; <span class='cmd'>chmod</span> </h2>
+
+	<li> Type
+		<div class='cli'>
+			$ ls -al
+		</div>
+		and note the first column of each entry.  E.g.:
+
+		<div class='output'>
+<pre>total 79
+drwxr-xr-x    2 kurt     None            0 Jan  8 05:17 .
+drwxr-xr-x    3 kurt     None            0 Jan  8 04:55 ..
+-rw-r--r--    1 kurt     None         8059 Jan  8 05:25 funny
+-rwxr-xr-x    1 kurt     None          198 Jan  8 05:17 hello.bash
+-rw-r--r--    1 kurt     None          319 Jan  8 06:26 index.html
+-rw-r--r--    1 kurt     None        28454 Jan  8 06:24 vi_lab</pre>
+		</div>
+
+	<p> There are 10 characters there.  The first one is the file type (<span class='bcode'>d</span> for directory, <span
+		class='bcode'>-</span> for a regular file).</p>
+
+	<p> The next nine are permissions on the file (or directory).  Consider them as three groups of three: </p>
+
+		<ul>
+			<li> The first group are your permissions, the 2nd group are your group's permissions, and the final 3 are the
+				permissions for the whole world. </li>
+			<li> Each group is of the form rwx.  If the character is present, then the particular permission is granted.
+				<table border='0'>
+					<tr>
+						<th> <span class='code'> r </span> </th>
+						<td> read </td>
+					</tr>
+					<tr>
+						<th> <span class='code'> w </span> </th>
+						<td> write </td>
+					</tr>
+					<tr>
+						<th> <span class='code'> e </span> </th>
+						<td> execute </td>
+					</tr>
+				</table>
+			</li>
+
+			<li> These are fairly self-explanatory for files, but need some exploration for directories. </li>
+		</ul>
+
+	<h3> The <span class='cmd'>chmod</span> command </h3>
+
+	<li> The <span class='cmd'>chmod</span> command allows you to set (change) the permissions on a file or directory.
+	</li>
+
+	<li> There are several forms, including the ability to express all permissions for a particular entity (user, group,
+			world) as a single integer:
+		<table border='0'>
+			<tr>
+				<th> <span class='code'> 4 </span> </th>
+				<td> read </td>
+			</tr>
+			<tr>
+				<th> <span class='code'> 2 </span> </th>
+				<td> write </td>
+			</tr>
+			<tr>
+				<th> <span class='code'> 1 </span> </th>
+				<td> execute </td>
+			</tr>
+		</table>
+	</li>
+	<li> You combine permissions by adding the values for the desired permissions.  So, e.g.,
+		<table border='0'>
+			<tr>
+				<th> <span class='code'> 7 </span> </th>
+				<td> all permissions </td>
+			</tr>
+			<tr>
+				<th> <span class='code'> 6 </span> </th>
+				<td> <span class='code'> r </span> &amp; <span class='code'> w </span> </td>
+			</tr>
+			<tr>
+				<th> <span class='code'> 5 </span> </th>
+				<td> <span class='code'> r </span> &amp; <span class='code'> e </span> </td>
+			</tr>
+			<tr>
+				<th> <span class='code'> 3 </span> </th>
+				<td> <span class='code'> w </span> &amp; <span class='code'> e </span> (rare) </td>
+			</tr>
+		</table>
+	</li>
+
+	<li> When you specify permissions to <span class='cmd'>chmod</span>, you must specify the permissions for all 3
+		entities.  This is simply 3 integers, in order: user, group, world. </li>
+
+	<li> The form of the command is:
+		<div class='code'>
+			<span class='cmd'>chmod</span> <i>perm</i> <i>file</i></span>
+		</div>
+
+		<p> E.g.: </p>
+
+		<ul>
+			<li> <span class='cmd'>chmod 700 Personal</span> &ndash; gives you all permissions on
+				your <span class='code'>Personal/</span> directory, and none to anybody else </li>
+			<li> <span class='cmd'>chmod 755 Public</span>  &ndash; gives you all permissions on your
+				<span class='code'>Public/</span> directory, and read and execute access to everyone
+				else </li>
+			<li> <span class='cmd'>chmod 644 .plan</span> &ndash; You have read &amp; write on
+				your <span class='code'>.plan</span> file, all others have only read </li>
+			<li> <span class='cmd'>chmod 600 homework.cc</span> &ndash; you have read &amp; write,
+				and all others have no access </li>
+
+			<p>In general, you NEVER want to give people write access to your
+			directories.  Some directories we leave open for read and execute, like
+			public_html, so people can get to your webpages, and so on.</p>
+		</ul>
+	</li>
+
+	<li> Copy <span class='fn'>funny</span> and <span class='fn'>hello.bash</span> from the course lab directory
+
+		<p> Enter </p>
+		<div class='cli'> $ ls -l </div>
+	</li>
+		
+	<script><!--
+		question( "What do you see?" )
+	//--></script>
+
+	<script><!--
+		q = "If you enter <span class='cmd'>chmod 644 some_file</span> , what permissions did you give \
+				to whom?"
+		question( q )
+	//--></script>
+
+	<script><!--
+		q = "If you enter <span class='cmd'>chmod 755 some_file</span> , what permissions \
+				did you give to whom?"
+		question( q )
+	//--></script>
+
+	<li> Enter
+		<div class='cli'> $ chmod 644 funny </div>
+	</li>
+
+	<script><!--
+		question( "Can you read your <span class='fn'>funny</span> file?" )
+	//--></script>
+
+	<li> Type
+		<div class='cli'>$ chmod 644 hello.bash</div>
+	</li>
+
+	<script><!--
+		question( "Can you read your <span class='fn'>hello.bash</span> file?" )
+	//--></script>
+
+	<li> Attempt to execute <span class='fn'>hello.bash</span>:
+		<div class='cli'> $ ./hello.bash </div>
+	</li>
+
+	<script><!--
+		question( "Were you successful?" )
+	//--></script>
+	
+	<script><!--
+		q = "What are 2 ways of giving yourself execute permission on <span class='fn'>hello.bash</span>?"
+		question( q )
+	//--></script>
+
+	<li> Type:
+		<div class='cli'> $ chmod 400 funny </div>
+	</li>
+	<li> Open the <span class='fn'>funny</span> in an editor, make a change </li>
+	<li> Save the file </li>
+
+	<script><!--
+		question( "What happened?" )
+	//--></script>
+
+<h2> Your website </h2>
+
+	<li> Return to your home directory </li>
+	<li> Give these permissions on your home:
+		<div class='cli'>
+			$ chmod 711 ~/
+		</div>
+	</li>
+	<li> Create a directory called <span class='fn'>public_html/</span> </li>
+	<li> Make that your current working directory </li>
+	<li> Copy <span class='fn'>sample.html</span> to your directory, renaming it to <span class='fn'>index.html</span>
+	</li>
+	<li> Fill it in with your info, then open up a browser, go to <span
+		class='fn'>http://www.cs.drexel.edu/~<i>userId</i>/index.html</span> </li>
+	<li> Play with the permissions on the file, and on your <span class='fn'>public_html/</span> directory, make sure you
+		can see it
+		<ul>
+			<li> Remember, the Web server runs as a different user, not you, and not in your group </li>
+		</ul>
+	</li>
+	<li> Leave it there, and open, for us to view. </li>
+
+<h2> Shell wildcards and special symbols </h2>
+
+	<li> The shell reserves certain characters.  These include <tt>*</tt>, which matches any number of characters, and
+		<tt>?</tt>, which matches exactly 1 character.  A space is used to separate tokens. </li>
+
+	<li> Copy the following files from my directory: <span class='fn'>annoy</span> <span class='fn'>annoy.cc</span> <span
+		class='fn'>itemList</span> <span class='fn'>itemList-2cols</span> <span class='fn'>TelecomTruths</span> <span
+		class='fn'>UnitTestingPhase</span>
+	</li>
+
+	<li> Execute each of the following lines:
+		<blockquote><tt>
+			ls *
+			<br>ls a*
+			<br>ls *m*
+			<br>ls anno?
+			<br>ls annoy?
+		</tt></blockquote>
+	</li>
+
+	<script><!--
+		question( "What is the output of each of the above?" )
+	//--></script>
+
+<h2> Quoting and Escaping </h2>
+	<li> We can suppress these special meanings in different ways:
+		<ul>
+			<li> <span class='bcode'>\</span> is the escape character </li>
+			<li> single quotes (suppresses all special meanings) </li>
+			<li> double quotes, keeps variable substitution, <span class='bcode'>$</span>, command substitution (back quotes),
+				and the escape character, <span class='bcode'>\</span> </li>
+		</ul>
+	</li>
+
+	<li> Create a file w/a space in the name:
+		<div class='cli'> vi a space </div>
+	</li>
+
+	<script><!--
+		question( "What happened?" )
+	//--></script>
+
+	<li> Quit out of both those files, w/out saving </li>
+
+	<li> Try again:  
+		<div class='cli'> vi "a space" </div>
+
+		Type something in, save.
+	</li>
+
+	<li> Remove it:
+		<div class='cli'> rm a\ space </div>
+	
+		2 different ways to escape the space (which has special meaning to the shell).
+	</li>
+
+	<!-- KS, moved to 2, 4/2018
+	<h2>Quoting, Command Substitution</h2>
+
+	<li> If the shell sees back quotes it will execute the quoted command,
+	and replaced the quoted expression w/the output (stdout) of the command.
+
+	<li> try each of the following commands.
+
+	<p><font color="#990066"><b>Q12</b>: Record the output:
+
+		<ul type="a">
+			<li> <tt>echo Is a &lt; b?</tt> </li>
+			<li> <tt>echo "Is a &lt; b?"</tt> </li>
+			<li> <tt>echo "\$USER is $USER"</tt> </li>
+			<li> <tt>echo '\$USER is $USER'</tt> </li>
+			<li> <tt>echo "Today is `date`"</tt> </li>
+			<li> <tt>echo "Today is $(date)"</tt> </li>
+			<li> <tt>echo 'Today is `date`'</tt> </li>
+			<li> <tt>echo -e "Files that start w/e:\n`ls e*`"</tt> </li>
+		</tt></ul>
+	</font></p>
+	-->
+
+<h2> Other Commands </h2>
+
+	<script><!--
+		q = "Use the <span class='cmd'>man</span> pages to describe each " +
+				"option to <span class='cmd'>ls</span>, below"
+		question( q )
+	//--></script>
+
+	<ol type='a'>
+		<li> <span class='cmd'> -h </span> </li>
+		<li> <span class='cmd'> -l </span> </li>
+		<li> <span class='cmd'> -t </span> </li>
+		<li> <span class='cmd'> -A </span> </li>
+		<li> <span class='cmd'> -d </span> </li>
+	</ol>
+
+
+</ol>
+
+<h1> Submission </h1>
+
+<p> <strong>Never</strong> tarfiles, tarballs, zips, etc. </p>
+<ul>
+	<li> <span class='fn'>lab1</span> &mdash; your answer sheet </li>
+	<li> <span class='fn'>vi_lab</span> &mdash; Vim tutorial <br/>
+</ul>
+
+
+</body>
+</html>

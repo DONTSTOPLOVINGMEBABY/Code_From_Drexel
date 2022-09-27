@@ -1,0 +1,20 @@
+
+Player hank: type=computer, plays White tokens
+Player hankus: type=computer, plays Black tokens
+www.................................	1/5 1L
+w.....ww....w.......................	1/2 1L
+......bw....www.....................	1/6 1L
+.ww....ww....bw.....................	1/4 1L
+www...wwb....b......................	1/9 1L
+wbw...wwb...ww......................	1/9 1R
+www...wwb...bbw.....................	3/1 2L
+www...wwb...bbw...w.................	2/1 3L
+wwwb..wwb...bbw...............w.....	2/7 2R
+wwww.bwwb...bbw...............w.....	2/2 1R
+bwwwbbbww...wbw...............w.....	3/3 2L
+bwwb..bwwb..wbww....w.........w.....	3/6 1L
+wwwb..wwbb..bbww....w.....b...w.....	4/2 1R
+bwwb..bwwb..wbww....w.w...b...w.....	4/6 1L
+wwwb..wwbb..bbww....w.w...b..bw.....	4/1 1R
+bwwb..bwwb..wbww....www...b..bw.....	4/5 1L
+wwwb..wwbb..bbww....www...b.bbw.....	3/2 1R

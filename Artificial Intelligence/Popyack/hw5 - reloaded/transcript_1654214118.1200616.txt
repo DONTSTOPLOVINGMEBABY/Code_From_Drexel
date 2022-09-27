@@ -1,0 +1,7 @@
+
+Player hank: type=computer, plays White tokens
+Player hankus: type=computer, plays Black tokens
+www.................................	1/5 1L
+w.....ww....w.......................	1/2 1L
+......bw....www.....................	1/6 1L
+.ww....ww....bw.....................	1/4 1L

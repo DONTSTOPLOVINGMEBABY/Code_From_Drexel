@@ -1,0 +1,12 @@
+#!/bin/bash
+#### Henry Jacobs ####
+#### Anagram Lab ####
+#/### CS265 ####
+#### Professor Kurt Schmidt ####
+#### A Bash Program which finds the 8 largest anagram classes using the system dictionary. #### 
+#### Requires sign.c file and squash.awk file ####  
+
+gcc sign.c -o sign && ./sign < /usr/share/dict/words | awk -f squash.awk | awk '{ print NF, $0 }' | sort -n | tail -n 8
+
+
+

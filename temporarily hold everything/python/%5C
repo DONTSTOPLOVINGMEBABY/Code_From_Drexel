@@ -1,0 +1,17 @@
+import math
+
+x = int(input("Please give me a number => ")) 
+
+var1 = [] 
+
+
+def DecimaltoBinary(num) : 
+
+	if num >= 1: 
+		DecimaltoBinary(num // 2)
+	print(num % 2, end = '') 
+
+
+print(DecimaltoBinary(x))
+
+

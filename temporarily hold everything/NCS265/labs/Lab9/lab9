@@ -1,0 +1,35 @@
+Henry Jacobs
+CS265 -- Drexel University
+Lab 9 
+Kurt Schmidt
+
+
+Stack Lab 
+
+
+
+
+
+Debugging Lab
+
+2.1 I received a segmentation fault (core dumped) error and a new file named 'core' was created. 
+
+
+2.2 It bombed in the strcmp function, which was called in the inTable function. 
+
+
+
+2.3
+
+
+c. I received the same error as before (which was a segmentation fualt error). In order to get it to work, I defined an array of characters named st so we would be able to access the st arraay. 
+
+
+f. Program received signal SIGSEV, Segmentation fault, which means our program was trying to write memory that we did not have memory to. 
+
+
+2.4 Our program suffers from a logic error that does not affect the code at compile time. This is why we are able to compile the program, but are unsucessful in running it. 
+
+
+2.5 If we accidentally pass a string comparison to a function, the function will exit and our program will terminate. 
+

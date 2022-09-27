@@ -1,0 +1,28 @@
+1. The output returns true. This is because it is comparing the length of two strings instead of comparing the size of two integers, which would return false. 
+
+2. "All we have to decide is what to do with the chocolate that is given us..."
+The statement is saying that if grep finds the string chocolate in the file "mySettings" then it is to print the statement above ^. Grep returned true, so the next part of the script, echo, was executed. 
+
+3. Output - "2." This is because bash is only going to execute integer division and not float. Therefore, it will only return how many times the number x can be divided by five in terms of whole numbers. 
+
+4. The output is 0.  The following statement first mods 27 by 2, which should return. The "==" in the statement is an operator and acts the same as "=", therefore it just completes the expression. The next part of the script then tells how many errors were experienced while executing the last command. Since the command was straight forward and didn't experience any errors, a 0 was returned. 
+
+5. The outputs were "5 12 13" then "5 13". The first output differed from the second because the variable was set inside the the paranthesis in the first comand ("x=12"), which means that the variable is local only to that command. Since the first command, "unset x", removed all data associated with variable x, and the second command only assigned, x a piece of data locally, x was left blank for the third command. Therefore, when the command called x, it was blank, so it just put a blank in instead, causing there to be a space. 
+
+6. The output is the following:
+"Item
+Another
+Item". 
+
+This is because the script goes through, pulls, and prints each instance of a string in the script. It considers anything to be seperated by a space a different string, therefore it print Another and Item on two different two lines. 
+
+7. This time, the program is going to access the file blah and read the document, and only print out full lines of text. Therefore the output is:
+"Item
+Another Item".
+
+8. The output was the same as the prior. This time, we wrote the script first, and we used stdin to pipe the input or strings from the file blah into the loop so we could print the following output. 
+
+"Item
+Another Item"
+
+9. 10. 11. - I'm sorry, I ran out of time. 

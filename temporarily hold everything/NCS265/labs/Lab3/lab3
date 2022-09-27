@@ -1,0 +1,59 @@
+Henry Jacobs
+
+Kurt Schmidt
+
+Lab 3
+
+
+1. The following command outputs true. This is because bash reads 13 and 2 as strings, and does a lexical comparison. When the statement ( 13 < 2 ) is evaluated, it returns true, which then signals the command to echo true. The double ampersand is similar to an "and" statement because if the first part of the command is true, then the second part will execute. This one would read: if 13 (string) is less than 2 (string) then echo true. 
+
+
+2. The output of the following is: "All we have to decide is what to do with the chocolate that is given us...". The following command works by first evaluating the if statement, which uses grep to search the file "mySettings" for the string "chocolate". It then redirects the standard output and standard error output to "/dev/null". If this if statement returns true, the conditional will then execute the echo statement directly below it. This is explictly told to Bash by the "then" statement. We then signal to bash that we are done with the conditional by typing "fi". The reason we got the output that we did was because grep was able to find chocolate in mySettings, so the command returned 0 (true), which then prompted it to execute our echo statement and finish the conditional. 
+
+
+3. The following command returns 2. This command returns performs an arithmetic tests, and divides x (whose value is 13) by 5. The exact answer for this would be 13/5 or 5.6 . Bash then proceeds to round down to the nearest whole number, which in this case is 2. The $ tells the shell that we are performing an arithmetic operation on the expression that follows. 
+
+
+4. The output of the following commands is 0. This is because the shell first evaluates the arithmetic that mods 27 by 2. The result of this is arithmetic is checked to see if it equals 1, which it in fact does, so it then returns 0 (or true). When we execute the command "echo $?" and it returns 0, this means that the previous command executed successfully without errors. 
+
+
+5. The output of the first is 5 12 13 and the output of the second is 5  13 . In the first command, we define the variable x locally inside the paranthesis, meaning that it will only hold that value while we execute commands within the paranthesis. Once we complete the command, x becomes unset and does not hold a value globally. This is why the first output printed 12 (because variable was set locally inside parens), and printed a black space in the second (because variable was not defined globally inside the parens). 
+
+
+6. The output of the following loop is: 
+
+Item
+Another
+item
+
+
+This comes from our for loop, which loops through the given file, and prints each word that's denoted by a space via the cat command. 
+
+
+7. The output from the following was:
+
+
+Item
+Another item
+
+
+What happens with this command is that we first print the contents of the file blah to standard output. We then pipe this into our while loop, which loops through the file, and reads each line of text within that file, and assigns one line at a time to the variable item. We then echo this variable item, and then go back to the while loop so that the variable can be assigned to the next line of text within the file. 
+
+
+8. The output of the following was:
+
+Item
+Another Item
+
+
+Again, this is similar to line of commands above. We read through each line of text in a given file, assign one line at a time to the variable item, and echo that variable. Input is given to the while loop via standard input from the file blah to done. 
+
+
+9. See count.bash
+
+
+10. See reextend
+
+
+11. See organiseMusic
+

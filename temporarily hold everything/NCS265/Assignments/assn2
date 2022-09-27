@@ -1,0 +1,163 @@
+#!/bin/bash
+#Henry Jacobs
+#Professor Kurt Schmidt
+
+function setdb
+{
+	arg1=$1
+	arg2=$2
+
+	if [ -f "$1" ] && [ -r "$1" ] && [ -z "$arg2" ]  
+	then 
+		echo "Database set to "$1""
+	elif [ -f "$1" ] && ! [ -r "$1" ] && [ -z "$arg2" ] 
+	then
+		echo "File "$1" not readable."
+		return 1
+	elif ! [ -f "$1" ] && ! [ -z "$arg1" ]
+	then 
+		echo "File "$1" created. Database set to "$1""
+		> "$1"
+   elif [ -z "$arg1" ]
+	then 
+		echo "Missing Argument"
+		return 1
+	elif ! [ -z "$arg2" ]
+	then 
+		echo "Extra arguments ignored"
+		> "$1"
+	fi
+}
+
+
+function add 
+{
+	arg1=$1
+	arg2=$2
+	arg3=$3
+
+	if [ -z "$arg2" ] &&  [ -z "$arg1" ] 
+	then
+		echo "Incorrect Syntax."
+	elif grep -q $arg1 $arg3
+	then
+		sed -i "/$arg1/ { c \
+		$arg1:$arg2
+		}" $arg3
+		echo "$arg1 has been updated to $arg2"
+	elif ! grep $arg1 $arg3
+	then
+		echo "$arg1:$arg2" >> $arg3
+		echo "$arg1:$arg2 has been added to the database"
+	fi
+	
+	return
+	
+}
+
+
+function delete
+{
+	arg1=$1
+   arg2=$2
+   arg3=$3
+
+   if [ ! -z "$arg2" ] && [ ! -z "$arg1" ] 
+   then
+      echo "Incorrect Syntax"
+   elif ! grep -q $arg1 $arg2
+   then
+      echo "$arg1 does not exist in $arg2"
+	elif grep -q $arg1 $arg2 
+	then
+		sed -i "/$arg1/d" $arg2
+		echo "$arg1 has been deleted from $arg2"		
+	fi
+}
+
+
+
+function printdb
+{
+	echo ""
+	echo "  Product      Price "
+	echo "------------  -------"
+	awk -F ":" '{ printf "%-12s $%6.2f \n", $1, $2}' $1 2>/dev/null
+	echo "" 
+}
+
+
+
+while true;
+do
+
+	echo -n "% "
+	read inputs
+	set -- $inputs
+	main_vars=$1
+	args2=$2
+	args3=$3
+	if [ $main_vars == "setdb" ]
+	then
+		setdb $args2 $args3 
+		if [ $? == 0 ]
+		then
+			break
+		fi
+	elif [ $main_vars == "add" ]
+	then
+		echo "Database has not been set."
+	elif [ $main_vars == "delete" ]
+	then
+		echo "Database has not been set."
+	elif [ $main_vars == "printdb" ]
+	then
+		echo "Database has not been set."
+	elif [ $main_vars == "quit" ] 
+	then 
+		leave="quit"
+		break
+	else
+		echo "Unrecognised Command"
+	fi
+	
+
+done
+
+
+
+while [[ $leave != "quit" ]] ;
+do
+
+	echo -n "% "
+	read input
+	set -- $input
+	main_var=$1
+	arg2=$2
+	arg3=$3
+
+	if [ $main_var == "quit" ]
+	then
+		break
+	
+	elif [ $main_var == "setdb" ]
+	then
+		echo "Database already set."
+	
+	elif [ $main_var == "add" ]
+	then
+		add $arg2 $arg3 $args2
+
+	elif [ $main_var == "delete" ]
+	then 
+		delete $arg2 $arg3 $args2
+
+	elif [ $main_var == "printdb" ] 
+	then 
+		printdb $args2
+
+	else 
+		echo "Unrecognised Command"
+	fi
+
+done

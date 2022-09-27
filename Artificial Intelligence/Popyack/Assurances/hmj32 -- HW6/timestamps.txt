@@ -1,0 +1,51 @@
+State Configuration : www.................................
+
+Running without Alpha-Beta Pruning
+
+Real: 2:00+ minutes (I cancelled execution after the two minute mark)
+
+Running with Alpha-Beta Pruning
+
+real	0m2.106s
+user	0m0.000s
+sys	0m0.000s
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+State Configuration: www....bb..ww....bb....wb.w.b......b
+
+Running without Alpha-Beta Pruning
+
+real    0m6.226s
+user    0m0.000s
+sys     0m0.015s
+
+Running with Alpha-Beta Pruning
+
+real    0m0.439s
+user    0m0.000s
+sys     0m0.015s
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+State Configuration: ........www.....bb....w.b.b.........
+
+Running without Alpha-Beta Pruning
+
+real    0m29.428s
+user    0m0.015s
+sys     0m0.000s
+
+Running with Alpha-Beta Pruning
+
+real    0m1.855s
+user    0m0.000s
+sys     0m0.000s

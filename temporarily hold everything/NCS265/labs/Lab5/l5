@@ -1,0 +1,37 @@
+### Henry Jacobs ### 
+### CS265 - Drexel University ###
+### Professor Kurt Schmidt ###
+### Lab 5 ###
+
+
+
+1. When compiled with gcc, the program outputted that the global variables held values: gi = 0 and gx = 0.000000 , and outputted that local variables held values: i = 32766 , and x = 0.000000 . When compiled with tcc, the program outputted that globals held values: gi = 0 and gx = 0.000000 and locals held values: i = 0 and x = 0.000000 . The difference here is that with gcc, the variable i held the value 32766 and with tcc the same variable (i) held 0. Obviously since I was compiling the same program, I expected the output to be the same regardless of the compiler, but that was not the case. 
+
+
+2. See bills.c
+
+
+3. a. 8
+	b. 3
+	c. 4
+	d. 2
+	e. 2
+
+
+4. King notes that the difference between using getchar and scanf to read a single character is that getchar will store the given character as an integer according to its ASCII value, while scanf will store the character as given character. For example, if I used int h = getchar() to store the character h, I would receive the value 104 , but if I used scanf to store the character h in the variable char h , I would receive the value h . 
+
+
+
+5. If we call scanf as given in the lab assignment with the values 12.3 45.6 789 , the variables will hold the following values: 
+
+	x = 0.000000
+	i = 45
+	y = 0.00000
+
+King warns us that if scanf is given the wrong conversion specification, scanf will likely store the wrong number of bytes and the wrong bit pattern because a float is not the same as a double. 
+
+
+
+6. See ipay.c 
+
+

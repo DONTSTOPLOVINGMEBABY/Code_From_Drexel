@@ -1,0 +1,87 @@
+Lab 6 
+Henry Jacobs 
+
+Question 1  
+
+
+int add3i(int *a, int n)
+{
+   int i ;
+
+   for(i=0;i<n;i++)
+      printf(" %d ", ( *(a+i) + 3 ) ) ;
+
+   return( 0 ) ;
+}
+
+
+
+int main( void )
+{
+   int list[4] = {0, 1, 2, 3} ;
+
+
+   add3i( list, 4 ) ;
+
+   return( 0 ) ;
+
+}
+
+
+Question 2
+
+
+int length( sNode *p ) 
+{
+	int i = 0 ;
+	while(p != NULL)
+	{
+		i++ ;
+		p=p->next ;
+	}
+	return(i) ; 
+}
+
+
+Question 3
+
+
+int sum( sNode *p ) 
+{
+	sNode* q = p ;
+
+	int sum = 0 ;
+	while(q != NULL) ;
+	{
+		sum += q->data ;
+		q=q->next ;
+
+	}
+
+	return(sum) ;
+}
+
+
+
+Question 4 
+
+
+void addk( sNode *p, int k )
+{
+	sNode* q = p ;
+
+	while(q != NULL)
+	{
+		q->data += k ;
+		q=q->next ;
+	}
+}
+
+
+
+Question 5 
+
+
+
+
+

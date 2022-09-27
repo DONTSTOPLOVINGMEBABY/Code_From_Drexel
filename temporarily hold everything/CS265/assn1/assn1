@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+# Henry Jacobs
+# May 3 2020
+# 
+# assn - A script that visits every subdirectory in a folder. Summarizes metric files across all subdirectories in the main directory.  
+# 
+# GNU bash, version 4.4.20(1)-release
+#
+#
+#
+#

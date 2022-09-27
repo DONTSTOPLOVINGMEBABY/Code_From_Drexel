@@ -1,0 +1,14 @@
+#!/bin/bash
+function mans {
+	read -p "Enter the directory path: " directory
+	for file in "$directory"/*; do
+		fine="$(basename $file)"
+		echo "$fine"
+	done
+}
+
+
+function extend {
+	for next in 
+
+mans

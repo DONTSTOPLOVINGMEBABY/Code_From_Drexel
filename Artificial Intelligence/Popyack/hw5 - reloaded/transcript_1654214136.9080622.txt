@@ -1,0 +1,3 @@
+
+Player hank: type=computer, plays White tokens
+Player hankus: type=computer, plays Black tokens

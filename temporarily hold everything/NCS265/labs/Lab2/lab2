@@ -1,0 +1,86 @@
+Henry Jacobs
+
+Kurt Schmidt 
+
+Lab 2 
+
+
+1.
+
+./labs/Lab2/Tmp/gotMe.bash
+./labs/Lab2/list
+./labs/Lab2/lab2
+
+
+2. find -type f -name *.bash
+
+
+3. 499 breadIsDangerous.txt
+
+
+4. 499
+
+
+5. ls -l | wc - l
+
+
+6. grep bread breadIsDangerous.txt
+
+
+7. grep the breadIsDangerous.txt | wc -l
+
+
+8. There is a new file named spellExample.bak which contains the original file before ispell was used to correct the errors, which is a result of the option -b applied to the ispell command, which creates a backup file by appending ".bak" to the name of the input file. 
+
+
+9. The output compares the differences found between the two files. For example it shows that in 'spellExample.bak' the word garden is spelled incorrectly (as 'gadren') while it's spelled correctly in spellExample. We know that the it is spelled 'gadren' in spellExample.bak because the line that's listed from the command is denoted with a '<', which signals that it comes from the first file listed in the command. Since the command was written as 'diff spellExample.bak spellExample', we know that this '<' refers to spellExample.bak and this '>' refers to spellExample. 
+
+
+10. There was no output because there were both the same files, and as a result, did not share any differences from one another.
+
+
+11. The output was different from what I expected. I naturally expected them to be ordered in numerical order, but they were ordered with respect to their first digit, and if two or more numbers shared the same first digit, then they were ordered with respect to their second digit and so forth. For example, if you used the sort command to sort a file that contained the number 22 and the number 4(in that order), it would list 22 first, and then 4 because it would list the numbers in ascending order by their first integer. The same logic would apply for words or letters. If the file contained the letter z and the letter yarn, sort would list yarn first, and then z because the first digit (z) holds a greater ASCII value than the y in yarn (y also naturally comes after z in the alphabet). 
+
+1
+15
+17
+20
+24
+26
+28
+29
+6
+9
+
+
+12. The numbers are now sorted according to their numeric values. So now, 29 is listed as greater than 6 and 9 because the command no longer sorts according to digit values.
+
+1
+6
+9
+15
+17
+20
+24
+26
+28
+29
+
+
+
+13. The files are listed in descending order according to their file sizes. The r in the sort command reverses the results of the list. This is why the size is listed in descending order instead of ascending order, like we saw in the output that resulted from the commands used in questions 10 and 11.
+
+
+14. du * | sort -n | tail -n8
+
+
+15. Using echo $? after the first command returns a 0 because the command was successfully executed. The zero means that grep did not encounter an error. Using echo $? after the second command returns a 1 because grep found the file but not the string. The third command returned a 2 after echo $? because grep was unable to find the file. 
+
+
+16. File breadIsDangerous.txt has 499 words
+
+
+17. echo "The current directory is $PWD"
+
+
+

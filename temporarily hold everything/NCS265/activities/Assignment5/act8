@@ -1,0 +1,63 @@
+Henry Jacobs, Mert Candan, Dexter Q Lee, and Curtis Holick - Activity 8 
+
+Question 1 
+
+sNode* remove( sNode *L, int t )
+{
+   sNode *p = L , *q = NULL ;
+
+   if (!(p->next))
+      return NULL ;
+
+   while( p!=NULL )
+   {
+      if( p->data == t )
+         break ;
+      q = p ;
+      p = p->next ;
+   }
+
+   if( p == NULL ) return NULL ;
+
+   q->next = p->next ;
+
+   free(p) ;
+   p = NULL ;
+
+   return L ;
+
+
+   // TODO:  unhook that element
+}
+
+
+Question 2
+
+
+
+int main()
+{
+   sNode *L = NULL ;  // some list
+   sNote *t = NULL ;
+
+   sNode *L = (sNode*) malloc( sizeof (sNode)) ;
+   L->data = 12 ;
+   L->next = NULL ;
+
+   sNode *t = (sNode*) malloc( sizeof( sNode )) ;
+   t->data = 13 ;
+   t->next = L ;
+   L = t ;
+
+
+   t = remove( L, 13 ) ;
+
+   while( t-> next != NULL )
+   {
+      printf("%d\n", t->data) ;
+		t = t->next ; 
+   }
+
+   return 0 ;
+}
+

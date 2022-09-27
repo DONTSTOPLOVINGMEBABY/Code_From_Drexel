@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.0 Transitional//EN'>
+<html>
+<head>
+	<meta http-equiv='Content-Language' content='en-us'>
+	<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'>
+	<meta http-equiv='Expires' content='no-expire'>
+	<meta name='Author' content='Vera Zaychik & Kurt Schmidt'>
+	<meta name='Publisher' content='Drexel University'>
+	<meta name='Copyright' content=''>
+	<meta name='Keywords' content='C Unix'>
+	<meta name='Description'
+		content='Activity for CS265'>
+	<meta name='Pagetype' content='Lab'>
+	<meta name='Audience' content='All'>
+	<link rel='shortcut icon' type='image/gif'
+		href='../../../images/drexel.gif'></link>
+	<script language='JavaScript' src='../../courseInfo.js'></script>
+	<script language='JavaScript' src='../../../Scripts/courseFormat.js'></script>
+	<title> Some Simple Sed Examples </title>
+	<link href='../labs.css' rel='stylesheet' type='text/css'>
+</head>
+
+<body text='#330099' link='#000066' vlink='#000066' alink='#ff0000'
+	background='../../../images/orange.png'>
+
+<h1> Activity 4 &mdash; Sed </h1>
+
+<p> Follow along, questions will be denoted with a <span  class='question'>Q</span>.  Fill in answers in a
+text file called <span class='fn'>act4</span>. </p>
+
+<p> You may work in groups, explain to each other what's happening.  Place the names of all group members at the top of
+the file, yours first. </p>
+
+<p> Files for this activity can be found in <span class='fn'>~kschmidt/public_html/CS265/Activities/4/</span> .  Copy
+them as needed. </p>
+
+<h2> Instructions </h2>
+
+<h3> Setup </h3>
+
+<p> Use AWK to add line numbers to <span class='file'>s1</span>, make <span class='file'>s1-num</span>
+
+<div class='cli'>
+<pre> awk '{printf( "%2d  %s\n", NR, $0 )}' s1 &gt; s1-num </pre>
+</div>
+
+<script><!--
+question( "Why did I use single quotes here?" )
+//--></script>
+
+<h3> Filter Out Lines </h3>
+
+<p> In <span class='cmd'>sed</span>, a REGEX is delimited with forward slashes, //.  We can use it to specify one or
+more lines. </p>
+
+<p> <span class='cmd'>d</span> is the <span class='cmd'>sed</span> command to delete a line. </p>
+
+<p> To remove lines that contain "sloop": </p>
+
+<div class='cli'>
+<pre> sed '/sloop/ d' s1 </pre>
+</div>
+
+<p> Whoop!  We missed "Sloop". </p>
+
+<div class='cli'>
+<pre> sed '/[Ss]loop/ d' s1 </pre>
+</div>
+
+<p> Note, the original file has not changed.  Re-direct output to a new file, or ask <span class='cmd'>sed</span> to
+edit in place (see below).  </p>
+
+<p> <span class='cmd'>sed</span> can take a range, either line numbers or regular expressions. </p>
+
+<p> Remove lines 24-28 (inclusive): </p>
+
+<div class='cli'>
+<pre> sed '24,28 d' s1-num </pre>
+</div>
+
+<p> The <span class='code'>$</span> in a range is the last line: </p>
+
+<div class='cli'>
+<pre> sed '34,$ d' s1-num </pre>
+</div>
+
+<p> We can mix regex and line numbers.  Delete from "Section 2" to the end of the file: </p>
+
+<div class='cli'>
+<pre> sed '/^\s*Section\s*2/,$ d' s1 </pre>
+</div>
+
+<script><!--
+question( 'Show a sed command to exclude any line containing the <em>word</em> "the" from file s1' )
+//--></script>
+
+<p> We can nestle tests.  Only delete lines in the header section where "Kurt" appears:
+
+<div class='cli'>
+<pre> sed '/&lt;head&gt;/,/&lt;\/head&gt;/ { /Kurt/ d }' </pre>
+</div>
+
+<p> (<b>Note</b>, we had to escape that / in the closing tag.) </p>
+
+<h3> The Substitute Command </h3>
+
+<div class='cmd'> s/<i>regex</i>/<i>replacement</i>/ </div>
+
+<p> replaces the first occurrence on each line of the string matched by <i>regex</i> with <i>replacement</i> .
+
+<div class='cli'>
+<pre> sed 's/line/RECORD/' s1 </pre>
+</div>
+
+<p> Use the <span class='cmd'>g</span> (global) flag to replace <em>every</em> occurrence on each line:
+
+<div class='cli'>
+<pre> sed 's/line/RECORD/g' s1 </pre>
+</div>
+
+<script><!--
+question( 'Did I need the single quotes in the above command?  Explain.' )
+//--></script>
+
+<p> We can apply a regex test or range to limit the substitute comand:
+
+<div class='cli'>
+<pre> sed '/occurrences/ s/line/RECORD/g' s1 
+ sed '1,/The Band/ s/line/RECORD/g' s1 </pre>
+</div>
+
+<script><!--
+q = 'Show the sed command to change any occurrence of "Kurt" to "Vera" in file s1, but only in the header section.' 
+question( q )
+//--></script>
+
+<h3> In-place Editing </h3>
+
+<p> <span class='cmd'>sed</span> provides the <span class='cmd'>-i</span> switch, to edit in-place. </p>
+
+<p> We can, optionally, supply <span class='cmd'>-i</span> with an argument, an extension to use.  Sed will then create
+a backup of the original file before making changes. </p>
+
+<div class='cli'>
+<pre> sed -i.BAK '1,/The Band/ s/line/RECORD/g' s1 </pre>
+</div>
+
+<p> Now try this: </p>
+
+<div class='cli'>
+<pre> diff s1 s1.BAK </pre>
+</div>
+
+<p> Replace the original: </p>
+
+<div class='cli'>
+<pre> mv s1.BAK s1 </pre>
+</div>
+
+<p> Use the <span class='cmd'>-e</span> option to supply multiple patches: </p>
+
+<div class='cli'>
+<pre> sed -i.BAK -e '1,/The Band/ s/line/RECORD/g' -e '/[Ss]loop/ d' s1 </pre>
+</div>
+
+<h3> Searching for Lines </h3>
+
+<p> We can also use <span class='cmd'>sed</span> like a more powerful <span class='cmd'>grep</span>.  By default, <span
+class='cmd'>sed</span> prints each line.  We can turn that behavior off with the <span class='cmd'>-n</span> option, and
+use <span class='cmd'>sed</span>'s <span class='cmd'>p</span> command to print only the lines we want: </p>
+
+<div class='cli'>
+<pre> sed -n -e '/[Cc]hocolate/ p' s1 </pre>
+</div>
+
+<p> Only print header lines that contain "content": </p>
+
+<div class='cli'>
+<pre> sed -n -e '/&lt;head&gt;/,/&lt;\/head&gt;/ { /[Cc]ontent/ p }' s1 </pre>
+</div>
+
+<h2> And More </h2>
+
+<p> <span class='cmd'>sed</span> can be used to insert text, swap lines, and other things.  Again, it is <em>Turing
+Complete</em>. </p>
+
+<p> I'd recommend <a target='_blank' href='https://www.grymoire.com/Unix/Sed.html'>this page</a> by Bruce Barnett, if
+you want to learn more. </p>
+
+</body>
+</html>

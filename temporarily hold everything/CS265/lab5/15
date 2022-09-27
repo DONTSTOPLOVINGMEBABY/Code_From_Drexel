@@ -1,0 +1,68 @@
+Part 1 
+
+1.1 The user defines "TRUE" as 0 and "FALSE" as 1, which is not logical because in C, FALSE is 0 and TRUE is any other number besides from 0. It may confuse a seasoned C programmer because they may read "TRUE 0" and "FALSE 1" quickly, and associate TRUE and FALSE with their respective values in C rather than what the user defined. 
+
+The if statement is also confusing. "not_eof" is a confusing name and could be better replaced with a name that describes if something is true. Instead of using not, maybe use is_eof. 
+
+1.2 The function name "smaller" could be improved with something that describes the function more accurately like "compareNums" or "compareNumsSize". The if else statement isn't necessary. You could simplify it by using a <= boolean. 
+
+int compareNums(char *s, char *t) {
+	return strcmp(s, t) <= 0 ;
+} 
+
+1.3 This is a mouthful. 
+
+1.4 
+
+
+if ( (c != 'y') && (c != 'Y') )
+	return;
+
+
+if (length >= BUFSIZE)
+	length = BUFSIZE;
+
+
+flag = !flag;
+
+
+quote = (*line == ""');
+
+
+bit = val & 1;
+
+
+1.5 Val and ch will not always be read in the order that they are written on the screen. It isn't certain that val will be read first and ch will be read second. 
+
+1.6 I received 2 1 on an online c compiler. 
+
+
+
+Part 2 
+
+
+2.1
+
+#include <stdio.h>
+  
+int t1( int n ){
+   int i;
+   int j;
+   for(i=1; i<=n; i++)
+      { for (j=1; j<=i; j++)
+            {printf("*");
+            }
+            printf("\n");
+         }
+         return 0;
+      }
+
+
+int main(){
+   t1(4);
+   return 0;
+}
+
+
+
+End of Submission. (I apologize, I procrastinated) 

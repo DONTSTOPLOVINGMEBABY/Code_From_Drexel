@@ -1,0 +1,320 @@
+MAXDEPTH = 1 until specified otherwise
+
+
+-------------------
+Welcome to Pentago!
+-------------------
+Reading setup from config_1653963351.6517332.txt:
+
+Player hank: type=computer, plays White tokens
+Player hankus: type=computer, plays Black tokens
+
+hello
+
+real	0m41.348s
+user	0m41.179s
+sys	0m0.064s
+
+
+
+-------------------
+Welcome to Pentago!
+-------------------
+Reading setup from config_1653963351.6517332.txt:
+
+Player hank: type=computer, plays White tokens
+Player hankus: type=computer, plays Black tokens
+
+hello
+
+real	0m46.100s
+user	0m44.042s
+sys	0m0.418s
+
+
+
+-------------------
+Welcome to Pentago!
+-------------------
+Reading setup from config_1653963351.6517332.txt:
+
+Player hank: type=computer, plays White tokens
+Player hankus: type=computer, plays Black tokens
+
+hello
+
+real	0m43.388s
+user	0m42.494s
+sys	0m0.311s
+
+
+
+-------------------
+Welcome to Pentago!
+-------------------
+Reading setup from config_1653963351.6517332.txt:
+
+Player hank: type=computer, plays White tokens
+Player hankus: type=computer, plays Black tokens
+
+hello
+
+real	0m43.297s
+user	0m42.585s
+sys	0m0.225s
+
+
+
+-------------------
+Welcome to Pentago!
+-------------------
+Reading setup from config_1653963351.6517332.txt:
+
+Player hank: type=computer, plays White tokens
+Player hankus: type=computer, plays Black tokens
+
+hello
+
+real	0m42.924s
+user	0m42.177s
+sys	0m0.241s
+
+
+
+-------------------
+Welcome to Pentago!
+-------------------
+Reading setup from config_1653963351.6517332.txt:
+
+Player hank: type=computer, plays White tokens
+Player hankus: type=computer, plays Black tokens
+
+hello
+
+real	0m42.254s
+user	0m41.848s
+sys	0m0.163s
+
+
+
+-------------------
+Welcome to Pentago!
+-------------------
+Reading setup from config_1653963351.6517332.txt:
+
+Player hank: type=computer, plays White tokens
+Player hankus: type=computer, plays Black tokens
+
+hello
+
+real	0m44.210s
+user	0m42.238s
+sys	0m0.308s
+
+
+
+-------------------
+Welcome to Pentago!
+-------------------
+Reading setup from config_1653963351.6517332.txt:
+
+Player hank: type=computer, plays White tokens
+Player hankus: type=computer, plays Black tokens
+
+hello
+
+real	0m44.282s
+user	0m42.536s
+sys	0m0.328s
+
+
+
+-------------------
+Welcome to Pentago!
+-------------------
+Reading setup from config_1653963351.6517332.txt:
+
+Player hank: type=computer, plays White tokens
+Player hankus: type=computer, plays Black tokens
+
+hello
+
+real	0m44.361s
+user	0m43.176s
+sys	0m0.300s
+
+
+
+-------------------
+Welcome to Pentago!
+-------------------
+Reading setup from config_1653963351.6517332.txt:
+
+Player hank: type=computer, plays White tokens
+Player hankus: type=computer, plays Black tokens
+
+hello
+
+real	0m42.115s
+user	0m41.763s
+sys	0m0.101s
+
+
+
+-------------------
+Welcome to Pentago!
+-------------------
+Reading setup from config_1653963351.6517332.txt:
+
+Player hank: type=computer, plays White tokens
+Player hankus: type=computer, plays Black tokens
+
+hello
+
+real	0m40.884s
+user	0m40.673s
+sys	0m0.051s
+
+
+
+-------------------
+Welcome to Pentago!
+-------------------
+Reading setup from config_1653963351.6517332.txt:
+
+Player hank: type=computer, plays White tokens
+Player hankus: type=computer, plays Black tokens
+
+hello
+
+real	0m42.097s
+user	0m41.489s
+sys	0m0.165s
+
+
+
+-------------------
+Welcome to Pentago!
+-------------------
+Reading setup from config_1653963351.6517332.txt:
+
+Player hank: type=computer, plays White tokens
+Player hankus: type=computer, plays Black tokens
+
+hello
+
+real	0m44.242s
+user	0m42.953s
+sys	0m0.328s
+
+
+
+-------------------
+Welcome to Pentago!
+-------------------
+Reading setup from config_1653963351.6517332.txt:
+
+Player hank: type=computer, plays White tokens
+Player hankus: type=computer, plays Black tokens
+
+hello
+
+real	0m45.022s
+user	0m43.558s
+sys	0m0.386s
+
+
+
+-------------------
+Welcome to Pentago!
+-------------------
+Reading setup from config_1653963351.6517332.txt:
+
+Player hank: type=computer, plays White tokens
+Player hankus: type=computer, plays Black tokens
+
+hello
+
+real	0m45.320s
+user	0m43.945s
+sys	0m0.438s
+
+
+
+-------------------
+Welcome to Pentago!
+-------------------
+Reading setup from config_1653963351.6517332.txt:
+
+Player hank: type=computer, plays White tokens
+Player hankus: type=computer, plays Black tokens
+
+hello
+
+real	0m44.947s
+user	0m43.565s
+sys	0m0.419s
+
+
+
+-------------------
+Welcome to Pentago!
+-------------------
+Reading setup from config_1653963351.6517332.txt:
+
+Player hank: type=computer, plays White tokens
+Player hankus: type=computer, plays Black tokens
+
+hello
+
+real	0m49.426s
+user	0m47.039s
+sys	0m0.754s
+
+
+
+-------------------
+Welcome to Pentago!
+-------------------
+Reading setup from config_1653963351.6517332.txt:
+
+Player hank: type=computer, plays White tokens
+Player hankus: type=computer, plays Black tokens
+
+hello
+
+real	0m46.753s
+user	0m44.975s
+sys	0m0.533s
+
+
+
+-------------------
+Welcome to Pentago!
+-------------------
+Reading setup from config_1653963351.6517332.txt:
+
+Player hank: type=computer, plays White tokens
+Player hankus: type=computer, plays Black tokens
+
+hello
+
+real	0m46.016s
+user	0m43.868s
+sys	0m0.459s
+
+
+
+-------------------
+Welcome to Pentago!
+-------------------
+Reading setup from config_1653963351.6517332.txt:
+
+Player hank: type=computer, plays White tokens
+Player hankus: type=computer, plays Black tokens
+
+hello
+
+real	0m43.577s
+user	0m42.565s
+sys	0m0.292s

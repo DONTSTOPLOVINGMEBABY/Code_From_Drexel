@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+# Henry Jacobs
+# May 3 2020
+# 
+# 
+# anagram - A program that finds the 8 largest anagram classes in the system dictionary. 
+# 
+# 
+# GNU bash, version 4.4.20(1)-release
+ 
+
+gcc -osign sign.c
+
+./sign < /usr/share/dict/words | sort | awk -f squash.awk > out
+
+./sign < /usr/share/dict/words | sort | awk -f squash > out
+
+awk '{ print NF " " $0}' out | sort -n | tail
+
+
+

@@ -1,0 +1,9 @@
+Debugging Lab, Henry Jacobs
+
+1. When I ran bug3, it prompted me to enter a string. After entering the string, it gave me a message that read, "Segmentation fault (core dumped)". I checked the directory and found that two new files existed from before I started the setup. The first was bug3, which came as a result of compiling bug3.c as bug3 and the second was a file called core, which is not a human readable file. 
+
+
+2. intable was the function that it 'bombed'
+
+
+3.  

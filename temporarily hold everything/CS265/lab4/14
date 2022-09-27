@@ -1,0 +1,40 @@
+Part 1
+
+1.1 egrep 'the' bright_side_of_life
+
+1.2
+
+1.3 egrep 'Just' bright_side_of_life
+
+1.4 egrep 'just|Just' bright_side_of_life
+
+1.5 egrep '^(just|Just)' bright_side_of_life
+
+1.6 egrep '(bad|mad)' bright_side_of_life
+
+1.7 egrep '(death|breath)' bright_side_life
+
+1.8 
+
+1.9 egrep '^( )' bright_side_of_life
+
+1.10 egrep '^$' bright_side_of_life
+
+1.11 11 empty lines
+
+
+Part 2  
+
+
+-- Bash Script "anagram" submitted along with this file. Other files necessary for anagram are submitted as well. 
+
+
+Part 3
+
+3.1 commit 4af610ca65f06ceb53aa25319f6403620659306d  
+
+3.2 "git reset --hard" clears the index and returns the working directory to the last committed state. Typically used one when finds themself in a place that they don't want to be. "git reset" should be used to unstage individual files. Person probably also found themself in a place they don't want to be."
+
+3.3 git checkout -- ketch
+
+

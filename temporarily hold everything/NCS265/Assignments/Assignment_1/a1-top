@@ -1,0 +1,30 @@
+#!/bin/bash
+# Henry Jacobs
+# CS265 -- Kurt Schmidt 
+# Assignment 1 -- JSON Dir 
+
+
+# Get Starting Point Folder and Change Current Directory
+
+echo -n "Enter Starting Folder => "
+read 
+cd "$1" 
+
+function checkForHtml
+{
+	y=$(bash awkward.awk $1)
+	if [[ $y == "html" ]] 
+		then
+			echo "$1"
+	fi
+}
+
+for x in *
+	do
+	{
+		
+		
+		
+	} 
+
+	done

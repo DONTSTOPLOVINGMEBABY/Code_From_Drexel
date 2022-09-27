@@ -1,0 +1,44 @@
+Henry Jacobs, Lab 1, Kurt Schmidt
+  
+2. 'Line Two'
+
+3. 'Line Three'
+
+4. If I enter ls -l, it pulls up a list of the files in the course lab directory, and describes the permissions of the various files in the directory. 
+
+5. Entering 'chmod 644' gives the user read and write permissions, and only read permissions to everyone else. 
+
+6. Entering 'chmod 755' gives me all permissions on public directory, and gives read and execute permissions to everyone else. 
+
+7. Why of course. It talks about telemarketers and other things along that nature. 
+
+8. Yes, you can read. 
+
+9. Yes, it spat out 'Hellooooo!  My name is hmj32.  Have a good break?'.
+
+10. chmod 700 and chmod 755
+
+11. It won't allow me to make a change, it says that 'readonly' is set. I also got a message that says' Henry owls, we will be calling at a time convenient to us, like 4 am. ;)' after I spammed :quit in vim enough times. 	
+
+12. * - annoy  annoy.cc  itemList  itemList-2cols  TelecomTruths  UnitTestingPhase
+
+lab1:
+lab1 
+	a* - annoy  annoy.cc
+	*m* - itemList  itemList-2cols  TelecomTruths
+	anno? - annoy
+	annoy? - ls: cannot access 'annoy?': No such file or directory
+
+13. Just created two blank text files
+
+14. ls -h : Human-readable : prints characters that we are familiar with such as ', : ?'. You can use -l or -s to print human readable file sizes such as kilobytes, gigabytes, etc.
+
+	ls -l : Long list format
+
+	ls -t : sort by modification, sorted by most recently modified
+
+	ls -A : Does not list impled . and ..
+
+	ls -d : List directories, but no the contents
+
+

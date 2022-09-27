@@ -1,0 +1,20 @@
+Henry Jacobs 
+CS 283 -- Professor Katsinis
+
+
+For this Lab, I relied heavily on the code provided to us in lecture. Much of my code in server.c and client.c is pretty much identical found to the code on the networks slides in Week 7. The main difference came with syntax/structure and as well as some modifications to the echo function in server.c. 
+
+
+Instructions on how to Test the Program: 
+
+	1. Connect to Tux from two terminal windows, and make sure they are in the same directory. 
+	2. Use "make" to ensure that all programs are compiled and are up to date. 
+	3. In one terminal, envoke the server program with the proper port. For my tests, I used port 8080. ---> "./server 8080" ... If this port is in use, try another (8081, 8082, etc.)
+	4. In the other terminal window, envoke the client program with the proper host, port, and file. ---> "./client tux1.cs.drexel.edu 8080 a_text_file"
+		--> The host should be the one that the server is running on
+
+
+Additonal Notes
+
+** The server will keep running until given ctrl-c ** 
+** I have attached a file you can use for testing titled "a_text_file" **

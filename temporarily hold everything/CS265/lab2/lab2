@@ -1,0 +1,54 @@
+Lab2 Answers -- Henry Jacobs
+
+1. The output is:
+
+./lab2/Tmp/gotMe.bash
+./lab2/.lab2.swp
+./lab2/list
+
+2. find . -name\*.bash -print
+
+3. 499 breadIsDangerous.txt
+
+4. 499
+
+5. ls -1 | wc -l
+
+6. grep 'bread' breadIsDangerous.txt
+
+7. grep 'the' breadIsDangerous.txt | wc -l
+
+8. When I list the directory, the permissions section for the file "spellExample" in my directory have a + symbol at the end, and the file in Professor Schmidt's does not. rwxr-xr-x+
+
+9. spellExample.bak: No such file or directory
+
+10. The line was blank. It didn't find any differences because they are the same file. 
+
+11. Output: I expected it to sort the numbers in the file "numbers", but it simply printed out the numbers from the file. The sort with no argument simply prints out the contents of the file onto the command line. 
+
+12. Now the numbers are sorted in numerical order. When you give the sort command the argument '-n', it performs a numeric sort and compares them according to their string numerical value. 
+
+13. The files are listed in terms of file size, starting from the largest and making it's way to the smallest value. 
+
+14. While in the right directory : du -ah | head -n 10
+
+15. The first output shows all the instances where the word 'dough' is found in the file breadIsDangerous.txt, and prints out the text where the word is found. 
+
+The second command 'echo $?' returns 0, indicating that no errors occured while executing the first command. 
+
+The third command doesn't show any output because grep didn't find anything mathcing 'uniqueString' in the file. 
+
+The fourth command returns a 1 to indicate that there was one error while executing the third (the last) command that came from grep not being able to find the requested string. 
+
+The fifth command yields the output, "grep: noSuchFile: No such file or directory", letting you know the file doesn't exist. 
+
+The sixth command returns 2, to let you know that there were two errors found while executing the fifth command. One of the errors was that the string 'dough' was not found on the file, and the second was that the file didn't exist. 
+
+16. "File breadisDangerous.txt has 499 words"
+
+17. hmj=$(pwd) | echo "The current directory is $hmj"
+
+
+
+
+
